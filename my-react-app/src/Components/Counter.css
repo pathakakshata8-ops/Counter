@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* FULL PAGE BACKGROUND */
+body {
+  background-color: #f3f6fb;
+  min-height: 100vh;
+}
+
+/* CENTER CONTENT */
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CARD */
+.counter-card {
+  background: white;
+  width: 600px;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* TITLE */
+.counter-card h1 {
+  font-size: 42px;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+/* COUNT */
+.count-text {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.count-text span {
+  color: #2bb0f6;
+  font-weight: bold;
+  font-size: 26px;
+}
+
+/* STEP INPUT */
+.step-box {
+  margin-bottom: 30px;
+}
+
+.step-box label {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.step-box input {
+  width: 120px;
+  padding: 8px 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* BUTTONS */
+.button-group {
+  display: flex;
+  gap: 15px;
+}
+
+.button-group button {
+  flex: 1;
+  padding: 14px 0;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #2bb0f6, #1a8cff);
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.button-group button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(43, 176, 246, 0.4);
+}
+
+.button-group button:disabled {
+  background: #cfd8dc;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.button-group .reset {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+}
