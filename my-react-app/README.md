@@ -1,30 +1,39 @@
-# 🔢 React Counter App (useState Challenge)
+# 🚀 Advanced Counter App (React)
 
-This project is a simple and interactive **React Counter Application** built using the **useState hook**.  
-It allows users to increment, decrement, and reset a counter value with a **custom step input**, all wrapped in a clean and modern UI.
+A modern and feature-rich Counter application built using **React Hooks**, focusing on clean logic, great user experience, and best practices.
 
----
-
-## 🚀 Features
-
-- Increment counter by a dynamic step value
-- Decrement counter with validation
-- Reset counter to zero
-- Controlled input using React state
-- Disabled buttons for invalid actions
-- Full-page background with card-based UI
-- Clean and responsive design
+This project goes beyond a basic counter by adding advanced state management, keyboard support, and a polished UI.
 
 ---
 
-## 🛠 Tech Stack
+## ✨ Features
 
-- **React (Vite)**
-- **JavaScript (ES6)**
-- **CSS**
-- **useState Hook**
+- ➕ Increment & ➖ Decrement counter
+- 🔢 Dynamic step value
+- 🔄 Reset counter
+- ⏪ Undo / ⏩ Redo functionality
+- ⌨️ Keyboard shortcuts support
+  - Arrow Up → Increment
+  - Arrow Down → Decrement
+  - R → Reset
+- 🎯 Minimum & maximum value validation
+- 📊 Progress visualization
+- 💎 Modern UI with smooth animations
+- 📱 Fully responsive design
 
 ---
 
-## 📂 Project Structure
+## 🛠️ Tech Stack
+
+- **React**
+- **React Hooks**
+  - `useState`
+  - `useEffect`
+  - `useCallback`
+- **CSS** (Glassmorphism-inspired modern UI)
+- **Vite** (Fast development & build tool)
+
+---
+
+## 📁 Project Structure
 
