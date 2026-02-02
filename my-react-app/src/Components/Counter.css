@@ -1,100 +1,183 @@
+/* ----------- RESET & BASE ----------- */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-/* FULL PAGE BACKGROUND */
 body {
-  background-color: #f3f6fb;
-  min-height: 100vh;
+  background: linear-gradient(135deg, #0f172a, #020617);
+  color: #e5e7eb;
 }
 
-/* CENTER CONTENT */
+/* ----------- PAGE LAYOUT ----------- */
 .page {
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
 }
 
-/* CARD */
+/* ----------- CARD ----------- */
 .counter-card {
-  background: white;
-  width: 600px;
-  padding: 40px;
-  border-radius: 16px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  width: 100%;
+  max-width: 420px;
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 18px;
+  padding: 2rem;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.6),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  animation: fadeIn 0.6s ease;
 }
 
-/* TITLE */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ----------- TITLE ----------- */
 .counter-card h1 {
-  font-size: 42px;
-  margin-bottom: 30px;
-  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+  color: #f8fafc;
 }
 
-/* COUNT */
+/* ----------- COUNT DISPLAY ----------- */
 .count-text {
-  font-size: 22px;
-  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
 }
 
 .count-text span {
-  color: #2bb0f6;
-  font-weight: bold;
-  font-size: 26px;
+  font-size: 2.4rem;
+  font-weight: 700;
+  display: block;
+  margin-top: 0.4rem;
+  color: #38bdf8;
 }
 
-/* STEP INPUT */
+/* ----------- PROGRESS BAR ----------- */
+.progress-bar {
+  height: 8px;
+  background: #020617;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 1.4rem;
+}
+
+.progress-bar div {
+  height: 100%;
+  background: linear-gradient(90deg, #38bdf8, #818cf8);
+  transition: width 0.3s ease;
+}
+
+/* ----------- STEP INPUT ----------- */
 .step-box {
-  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
 }
 
 .step-box label {
-  font-size: 18px;
-  margin-right: 10px;
+  font-size: 0.9rem;
+  opacity: 0.8;
 }
 
 .step-box input {
-  width: 120px;
-  padding: 8px 12px;
-  font-size: 16px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+  width: 90px;
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #020617;
+  color: #f8fafc;
+  outline: none;
+  text-align: center;
+  transition: border 0.2s ease;
 }
 
-/* BUTTONS */
+.step-box input:focus {
+  border-color: #38bdf8;
+}
+
+/* ----------- BUTTON GROUPS ----------- */
 .button-group {
   display: flex;
-  gap: 15px;
+  gap: 0.7rem;
+  margin-bottom: 0.8rem;
 }
 
-.button-group button {
+.button-group.secondary {
+  justify-content: center;
+}
+
+/* ----------- BUTTONS ----------- */
+button {
   flex: 1;
-  padding: 14px 0;
-  font-size: 18px;
-  border: none;
+  padding: 0.7rem 0;
   border-radius: 10px;
-  background: linear-gradient(135deg, #2bb0f6, #1a8cff);
-  color: white;
+  border: none;
+  background: #1e293b;
+  color: #f8fafc;
+  font-size: 0.95rem;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: 
+    background 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
 }
 
-.button-group button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(43, 176, 246, 0.4);
+button:hover {
+  background: #334155;
+  transform: translateY(-1px);
 }
 
-.button-group button:disabled {
-  background: #cfd8dc;
+button:active {
+  transform: translateY(0);
+}
+
+button:disabled {
+  opacity: 0.4;
   cursor: not-allowed;
-  box-shadow: none;
 }
 
-.button-group .reset {
-  background: linear-gradient(135deg, #00c6ff, #0072ff);
+/* ----------- RESET BUTTON ----------- */
+button.reset {
+  background: #7c2d12;
+}
+
+button.reset:hover {
+  background: #9a3412;
+}
+
+/* ----------- HINT ----------- */
+.hint {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
+
+/* ----------- MOBILE FRIENDLY ----------- */
+@media (max-width: 420px) {
+  .counter-card {
+    padding: 1.5rem;
+  }
+
+  .count-text span {
+    font-size: 2rem;
+  }
 }
